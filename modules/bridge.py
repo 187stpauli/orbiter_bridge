@@ -1,28 +1,9 @@
 import json
 import aiohttp
+import asyncio
 from eth_utils import to_checksum_address
 from client.client import Client
 from utils.logger import logger
-
-
-async def extract_extdata(data: str) -> bytes:
-    # Убираем "0x"
-    clean_data = data[2:] if data.startswith("0x") else data
-
-    # Ищем начало строковой части extData (обычно b7743d или просто 743d)
-
-    index = clean_data.find("743d")
-    if index == -1:
-        raise ValueError("extData string part не найдена!")
-
-    string_data_hex = clean_data[index:]
-
-    # Теперь конвертируем только строковую часть
-    string_data_bytes = bytes.fromhex(string_data_hex)
-    string_data = string_data_bytes.decode("utf-8").rstrip("\x00")
-
-    # Возвращаем как bytes (чистая строка в байтах)
-    return string_data.encode("utf-8")
 
 
 async def get_quote(client, from_chain_id, to_chain_id, amount):
@@ -73,36 +54,61 @@ async def get_quote(client, from_chain_id, to_chain_id, amount):
         async with aiohttp.ClientSession(headers=headers) as session:
             async with session.post(url, json=payload) as response:
                 response_data = await response.json()
-                return response_data, from_data
+                return response_data
     except Exception as e:
         logger.error(f"{e}")
 
 
-async def execute_bridge(client: Client, service_address: str, amount_in: int, from_network: dict, to_network: dict,
-                         aggregator_abi):
-    logger.info("⚙️ Подготовка транзакции...\n")
+async def wait_orbiter_status(tx_hash: str, timeout: int = 120, interval: int = 10) -> bool:
+    url = f"https://api.orbiter.finance/sdk/transaction/status/{tx_hash}"
+    headers = {
+        "x-forwarded-for": "127.0.0.1",
+        "x-real-ip": "127.0.0.1",
+        "client": "Python Script",
+        "Accept": "*/*",
+    }
+
+    elapsed = 0
+
+    while elapsed < timeout:
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, headers=headers) as response:
+                    if response.status != 200:
+                        logger.warning(f"Orbiter API вернул статус {response.status}")
+                    else:
+                        data = await response.json()
+                        status = data.get("status")
+
+                        if status == "success":
+                            logger.info("✅ Средства успешно доставлены в целевую сеть!\n")
+                            return True
+
+        except Exception as e:
+            logger.error(f"❗️ Ошибка при запросе статуса Orbiter: {e}")
+
+        # Ждём перед следующей проверкой
+        await asyncio.sleep(interval)
+        elapsed += interval
+
+    # Если сюда дошли → значит таймаут
+    logger.error("❌ Средства не дошли в целевую сеть за отведённое время (2 минуты)")
+    return False
+
+
+async def execute_bridge(client: Client, amount_in: int, from_network: dict, to_network: dict):
+
     try:
-        quote, from_data = await get_quote(client, from_network["chain_id"], to_network["chain_id"], amount_in)
-        data = quote["result"]["steps"][0]["tx"]
-        ext_data = data["data"]
-        ext_data = await extract_extdata(ext_data)
+        quote = await get_quote(client, from_network["chain_id"], to_network["chain_id"], amount_in)
 
-        params = (
-            service_address,  # recipient
-            str(from_data['nativeCurrency']['address']),  # inputToken
-            int(amount_in),  # inputAmount
-            "Orbiter",  # dApp
-            ext_data,  # extData
-            False  # unwrapped
-        )
-        print(params)
-        aggregator = to_checksum_address(data["to"])
+        data = quote["result"]["steps"][0]["tx"]["data"]
+        to = to_checksum_address(quote["result"]["steps"][0]["tx"]["to"])
+        gas_limit = int(quote["result"]["steps"][0]["tx"]["gasLimit"])
 
-        contract = client.w3.eth.contract(aggregator, abi=aggregator_abi)
-        # Симуляция call
-        tx = await contract.functions.executeBridge(params).build_transaction(await client.prepare_tx(amount_in))
-        print("Result:", tx)
-        exit(1)
-        # tx = contract.functions.executeBridge(bridge_data)
+        tx = await client.prepare_tx(amount_in, to, data)
+        tx_hash = await client.sign_and_send_tx(tx, external_gas=gas_limit)
+        await client.wait_tx(tx_hash, client.explorer_url)
+        await wait_orbiter_status(tx_hash)
+
     except Exception as e:
         logger.error(f"{e}")

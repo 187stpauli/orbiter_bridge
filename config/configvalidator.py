@@ -24,10 +24,10 @@ class ConfigValidator:
             with open(self.config_path, "r", encoding="utf-8") as file:
                 return json.load(file)
         except FileNotFoundError:
-            logging.error(f"Файл конфигурации {self.config_path} не найден.")
+            logging.error(f"❗️ Файл конфигурации {self.config_path} не найден.")
             exit(1)
         except json.JSONDecodeError:
-            logging.error(f"Ошибка разбора JSON в файле конфигурации {self.config_path}.")
+            logging.error(f"❗️ Ошибка разбора JSON в файле конфигурации {self.config_path}.")
             exit(1)
 
     @staticmethod
@@ -37,16 +37,16 @@ class ConfigValidator:
             proxy_name = proxy[4:]
             raw = os.getenv("PROXIES")
             if not raw:
-                logging.error("Ошибка: переменная окружения 'PROXIES' не найдена.")
+                logging.error("❗️ Ошибка: переменная окружения 'PROXIES' не найдена.")
                 exit(1)
             try:
                 proxy_map = json.loads(raw)
             except json.JSONDecodeError:
-                logging.error("Ошибка: 'PROXIES' в .env имеет некорректный JSON формат.")
+                logging.error("❗️ Ошибка: 'PROXIES' в .env имеет некорректный JSON формат.")
                 exit(1)
 
             if proxy_name not in proxy_map:
-                logging.error(f"Ошибка: ключ '{proxy_name}' не найден в PROXIES.")
+                logging.error(f"❗️ Ошибка: ключ '{proxy_name}' не найден в PROXIES.")
                 exit(1)
 
             return proxy_map[proxy_name]
@@ -60,17 +60,17 @@ class ConfigValidator:
             key_name = key[4:]
             raw = os.getenv("PRIVATE_KEYS")
             if not raw:
-                logging.error("Ошибка: переменная окружения 'PRIVATE_KEYS' не найдена.")
+                logging.error("❗️ Ошибка: переменная окружения 'PRIVATE_KEYS' не найдена.")
                 exit(1)
 
             try:
                 key_map = json.loads(raw)
             except json.JSONDecodeError:
-                logging.error("Ошибка: 'PRIVATE_KEYS' в .env имеет некорректный JSON формат.")
+                logging.error("❗️ Ошибка: 'PRIVATE_KEYS' в .env имеет некорректный JSON формат.")
                 exit(1)
 
             if key_name not in key_map:
-                logging.error(f"Ошибка: ключ '{key_name}' не найден в переменной PRIVATE_KEYS.")
+                logging.error(f"❗️ Ошибка: ключ '{key_name}' не найден в переменной PRIVATE_KEYS.")
                 exit(1)
 
             return key_map[key_name]
@@ -83,27 +83,28 @@ class ConfigValidator:
         await self.validate_required_keys()
 
         if "from_network" not in self.config_data:
-            logging.error("Ошибка: Отсутствует 'from_network' в конфигурации.")
+            logging.error("❗️ Ошибка: Отсутствует 'from_network' в конфигурации.")
             exit(1)
 
         if "proxy" not in self.config_data:
-            logging.error("Ошибка: Отсутствует 'proxy' в конфигурации.")
+            logging.error("❗️ Ошибка: Отсутствует 'proxy' в конфигурации.")
             exit(1)
 
         if "amount" not in self.config_data:
-            logging.error("Ошибка: Отсутствует 'amount' в конфигурации.")
+            logging.error("❗️ Ошибка: Отсутствует 'amount' в конфигурации.")
             exit(1)
 
         if "private_key" not in self.config_data:
-            logging.error("Ошибка: Отсутствует 'private_key' в конфигурации.")
+            logging.error("❗️ Ошибка: Отсутствует 'private_key' в конфигурации.")
             exit(1)
 
         if "to_network" not in self.config_data:
-            logging.error("Ошибка: Отсутствует 'to_network' в конфигурации.")
+            logging.error("❗️ Ошибка: Отсутствует 'to_network' в конфигурации.")
             exit(1)
 
         if self.config_data["from_network"] == self.config_data["to_network"]:
-            logging.error("Ошибка: Поля 'from_network' и 'to_network' имеют одинаковое значение, введите разные сети.")
+            logging.error(
+                "❗️ Ошибка: Поля 'from_network' и 'to_network' имеют одинаковое значение, введите разные сети.")
             exit(1)
 
         load_dotenv(dotenv_path="../.env")
@@ -134,7 +135,7 @@ class ConfigValidator:
 
         for key in required_keys:
             if key not in self.config_data:
-                logging.error(f"Ошибка: отсутствует обязательный ключ '{key}' в settings.json")
+                logging.error(f"❗️ Ошибка: отсутствует обязательный ключ '{key}' в settings.json")
                 exit(1)
 
     @staticmethod
@@ -144,7 +145,7 @@ class ConfigValidator:
             private_key_bytes = decode_hex(private_key)
             _ = keys.PrivateKey(private_key_bytes)
         except (ValueError, Exception):
-            logging.error("Ошибка: Некорректный 'private_key' в конфигурации.")
+            logging.error("❗️ Ошибка: Некорректный 'private_key' в конфигурации.")
             exit(1)
 
     @staticmethod
@@ -156,7 +157,7 @@ class ConfigValidator:
             "Polygon"
         ]
         if network not in networks:
-            logging.error("Ошибка: Неподдерживаемая сеть отправления! Введите одну из поддерживаемых сетей.")
+            logging.error("❗️ Ошибка: Неподдерживаемая сеть отправления! Введите одну из поддерживаемых сетей.")
             exit(1)
 
     @staticmethod
@@ -168,20 +169,20 @@ class ConfigValidator:
             "Polygon"
         ]
         if network not in networks:
-            logging.error("Ошибка: Неподдерживаемая сеть получения! Введите одну из поддерживаемых сетей.")
+            logging.error("❗️ Ошибка: Неподдерживаемая сеть получения! Введите одну из поддерживаемых сетей.")
             exit(1)
 
     @staticmethod
     async def validate_proxy(proxy: str) -> None:
         """Валидация прокси-адреса"""
         if not proxy:
-            logging.info("Прокси не указан — пропуск валидации.\n")
+            logging.info("⚠️ Прокси не указан — пропуск валидации.\n")
             return
 
         pattern = r"^(?P<login>[^:@]+):(?P<password>[^:@]+)@(?P<host>[\w.-]+):(?P<port>\d+)$"
         match = re.match(pattern, proxy)
         if not match:
-            logging.error("Ошибка: Неверный формат прокси! Должен быть 'login:pass@host:port'.")
+            logging.error("❗️ Ошибка: Неверный формат прокси! Должен быть 'login:pass@host:port'.")
             exit(1)
 
         proxy_url = {
@@ -189,25 +190,25 @@ class ConfigValidator:
         }
         response = requests.get("https://httpbin.org/ip", proxies=proxy_url, timeout=5)
         if response.status_code != 200:
-            logging.error("Ошибка: 'proxy' нерабочий или вернул неверный статус-код!")
+            logging.error("❗️ Ошибка: 'proxy' нерабочий или вернул неверный статус-код!")
             exit(1)
 
     @staticmethod
     async def validate_amount(amount_raw: float) -> None:
         """Валидация количества токенов"""
         if not isinstance(amount_raw, (str, int, float)):
-            raise ValueError(f"Количество должно быть строкой или числом, но имеет тип {type(amount_raw)}.")
+            raise ValueError(f"❗️ Количество должно быть строкой или числом, но имеет тип {type(amount_raw)}.")
 
         try:
             amount = Decimal(str(amount_raw))
         except InvalidOperation:
-            logging.error("Ошибка количества токенов! Введено невалидное значение.")
+            logging.error("❗️ Ошибка количества токенов! Введено невалидное значение.")
             exit(1)
 
         if amount <= 0:
-            logging.error("Количество токенов должно быть больше нуля.")
+            logging.error("❗️ Количество токенов должно быть больше нуля.")
             exit(1)
 
         if amount < MIN_AMOUNT:
-            logging.error("Количество токенов для отправки слишком мало, введите значение больше 0.00005.")
+            logging.error("❗️ Количество токенов для отправки слишком мало, введите значение больше 0.00005.")
             exit(1)

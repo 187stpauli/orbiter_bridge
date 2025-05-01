@@ -131,18 +131,6 @@ class Client:
         logger.info(f"🚀 Отправлен unwrap-тx: {tx_hash.hex()}\n")
         return tx_hash.hex()
 
-    # Получение баланса ERC20
-    async def get_erc20_balance(self) -> float | int:
-
-        contract = self.w3.eth.contract(
-            address=self.w3.to_checksum_address(self.usdc_address), abi=ERC20_ABI)
-        try:
-            balance = await contract.functions.balanceOf(self.address).call()
-            return balance
-        except Exception as e:
-            logger.error(f"❌ Ошибка при получении баланса ERC20: {e}")
-            return 0
-
     # Создание объекта контракт для дальнейшего обращения к нему
     async def get_contract(self, contract_address: str, abi: list) -> AsyncContract:
         return self.w3.eth.contract(
@@ -200,32 +188,6 @@ class Client:
             raise RuntimeError(f"Невозможно найти имя юнита с децималами: {decimals}")
         return self.w3.from_wei(number, unit_name)
 
-    # Метод для построения swap транзакции
-    async def build_swap_tx(self, quote_data: dict) -> TxParams:
-        """
-            Строим транзакцию для обмена токенов, используя котировку.
-            """
-        contract_address = quote_data['contractAddress']
-        amount_in = int(quote_data['srcQuoteTokenAmount'])
-        amount_out_min = int(quote_data['minReceiveAmount'])
-
-        # Строим транзакцию для обмена
-        contract = await self.get_contract(contract_address, ERC20_ABI)
-
-        tx_data = contract.encodeABI(
-            fn_name="swap",
-            args=[self.ltoken_address, self.core_address, amount_in, amount_out_min]
-        )
-
-        tx = await self.prepare_tx()
-        tx.update({
-            "to": contract_address,
-            "data": tx_data,
-            "value": 0  # Если необходимо, можно добавить нативные токены
-        })
-
-        return tx
-
     # Approve
     async def approve_usdc(self, usdc_contract, spender, amount, eip_1559: bool):
         owner = self.address
@@ -263,13 +225,22 @@ class Client:
         return receipt
 
     # Подготовка транзакции
-    async def prepare_tx(self, value: Union[int, float] = 0) -> TxParams:
+    async def prepare_tx(self, value: Union[int, float] = 0,
+                         to: Optional[str] = None, data: Optional[str] = None, gas: Optional[int] = None) -> TxParams:
         transaction: TxParams = {
             "chainId": await self.w3.eth.chain_id,
             "nonce": await self.w3.eth.get_transaction_count(self.address),
             "from": self.address,
             "value": value,
         }
+        if gas:
+            transaction["gas"] = gas
+
+        if to:
+            transaction["to"] = to
+
+        if data:
+            transaction["data"] = data
 
         if self.eip_1559:
             base_fee = await self.w3.eth.gas_price
@@ -292,7 +263,7 @@ class Client:
         try:
             if not without_gas:
                 if external_gas:
-                    transaction["gas"] = int(external_gas)
+                    transaction["gas"] = int(external_gas * 1.5)
                 else:
                     transaction["gas"] = int((await self.w3.eth.estimate_gas(transaction)) * 1.5)
 
