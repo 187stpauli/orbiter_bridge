@@ -1,0 +1,20 @@
+{
+  "Ethereum": {
+    "chain_id": 1,
+    "rpc_url": "https://ethereum-rpc.publicnode.com",
+    "explorer_url": "https://etherscan.io/",
+    "internal_id": 9001
+  },
+  "Arbitrum": {
+    "chain_id": 42161,
+    "rpc_url": "https://arbitrum-one-rpc.publicnode.com",
+    "explorer_url": "https://arbiscan.io/",
+    "internal_id": 9002
+  },
+  "Polygon": {
+    "chain_id": 137,
+    "rpc_url": "https://1rpc.io/matic",
+    "explorer_url": "https://polygonscan.com/",
+    "internal_id": 9006
+  }
+}

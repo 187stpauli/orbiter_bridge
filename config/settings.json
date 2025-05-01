@@ -1,0 +1,11 @@
+{
+  "_1": "____________________________________________Сети для использования___________________________________________",
+  "_2": "__________________________________________Ethereum,Arbitrum,Polygon__________________________________________",
+  "proxy": "ENV:my_proxy",
+  "private_key": "ENV:my_wallet_key",
+  "from_network": "Arbitrum",
+  "to_network": "Polygon",
+  "from_token": "ETH",
+  "to_token": "DAI",
+  "amount": 0.001
+}

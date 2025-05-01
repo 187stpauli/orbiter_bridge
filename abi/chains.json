@@ -1,0 +1,5548 @@
+{
+  "result": [
+    {
+      "chainId": "1",
+      "networkId": "1",
+      "internalId": 1,
+      "name": "Ethereum",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x3be8b60ddf9feff6b2426e47a7619d7cbc786d97": "OrbiterRouterV1",
+        "0xc741900276cd598060b0fe6594fbe977392928f4": "OrbiterRouterV3",
+        "0x68b5a1c02dea0958388eee5361f021018bd8dbe7": "OPoolV2",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Orbiter Token",
+          "symbol": "OBT",
+          "coinKey": "OBT",
+          "decimals": 18,
+          "address": "0x4af322ff4a6f2858f6b51e546b9ec499654493c5",
+          "isNative": false
+        },
+        {
+          "name": "Dai Stablecoin",
+          "symbol": "DAI",
+          "decimals": 18,
+          "coinKey": "DAI",
+          "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+          "isNative": false
+        },
+        {
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "coinKey": "USDC",
+          "decimals": 6,
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "coinKey": "USDT",
+          "decimals": 6,
+          "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+          "isNative": false
+        },
+        {
+          "name": "Wrapped BTC",
+          "symbol": "BTC",
+          "coinKey": "BTC",
+          "decimals": 8,
+          "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "isNative": false
+        },
+        {
+          "name": "Hashkey",
+          "symbol": "HSK",
+          "coinKey": "HSK",
+          "decimals": 18,
+          "address": "0xe7c6bf469e97eeb0bfb74c8dbff5bd47d4c1c98a",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV1",
+          "methods": [
+            "swap(address,address,uint256,bytes)",
+            "swapAnswer(address,address,uint256,bytes)"
+          ],
+          "extends": "OrbiterRouterV1",
+          "address": "0x3be8b60ddf9feff6b2426e47a7619d7cbc786d97"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xc741900276cd598060b0fe6594fbe977392928f4"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x00000047bb99ea4d791bb749d970de71ee0b1a34"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0xfc99f58a8974a4bc36e60e2d490bb8d72899ee9f"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0xa007bf0f21c7feca4dd46273ba92d49097f7530a"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x800589bdafe1fd3c47d545b7012b471e7dfbd0a7"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x7e1b771bba8f017e0988f068c320b8852f4a3265"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        },
+        {
+          "name": "LoopringEntryPoint",
+          "methods": [
+            "handleOps((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address)"
+          ],
+          "extends": "LoopringEntryPoint",
+          "address": "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0xf81cc2e1c891147510f31777f6a853f58e4cdc64"
+        },
+        {
+          "name": "OPoolV2",
+          "methods": [
+            "inbox(address,address,uint256,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "outboxBatch(address,address[],uint256[],bytes[])"
+          ],
+          "extends": "OPoolV2",
+          "address": "0x68b5a1c02dea0958388eee5361f021018bd8dbe7"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "42161",
+      "networkId": "42161",
+      "internalId": 2,
+      "name": "Arbitrum",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x752bc92211d1ecbb31f84e57c9dfc39a15df9cfa": "OrbiterRouterV1",
+        "0x6a065083886ec63d274b8e1fe19ae2ddf498bfdd": "OrbiterRouterV3",
+        "0x6285a466a98f513e1f6be29acad27d173d3b3c59": "OPool",
+        "0x68b5a1c02dea0958388eee5361f021018bd8dbe7": "OPoolV2",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "isNative": true
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Orbiter Token",
+          "symbol": "OBT",
+          "coinKey": "OBT",
+          "decimals": 18,
+          "address": "0x1cd9a56c8c2ea913c70319a44da75e99255aa46f",
+          "isNative": false
+        },
+        {
+          "name": "Dai Stablecoin",
+          "symbol": "DAI",
+          "decimals": 18,
+          "coinKey": "DAI",
+          "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+          "isNative": false
+        },
+        {
+          "name": "AiDoge",
+          "symbol": "AIDOGE",
+          "decimals": 6,
+          "coinKey": "AIDOGE",
+          "address": "0x09e18590e8f76b6cf471b3cd75fe1a1a9d2b2c2b",
+          "isNative": false
+        },
+        {
+          "name": "USDC Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "decimals": 6,
+          "coinKey": "USDT",
+          "address": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+          "isNative": false
+        },
+        {
+          "name": "Wrapped BTC",
+          "symbol": "BTC",
+          "decimals": 8,
+          "coinKey": "BTC",
+          "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV1",
+          "methods": [
+            "swap(address,address,uint256,bytes)",
+            "swapAnswer(address,address,uint256,bytes)"
+          ],
+          "extends": "OrbiterRouterV1",
+          "address": "0x752bc92211d1ecbb31f84e57c9dfc39a15df9cfa"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x6a065083886ec63d274b8e1fe19ae2ddf498bfdd"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0xfc99f58a8974a4bc36e60e2d490bb8d72899ee9f"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0xa884c238ad6e39523aab0aaaf68faa1d2e554237"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x90f1ef9d2cde204c8494cf73130771b350070b53"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x52cdb00b69f11c4ca932fa9108c6bfdd65f20d62"
+        },
+        {
+          "name": "OPool",
+          "methods": [
+            "inbox(address,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "inboxNative(address,address,uint256,uint256,bytes)"
+          ],
+          "extends": "OPool",
+          "address": "0x6285a466a98f513e1f6be29acad27d173d3b3c59"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0x402b0fea965e0f1a6fe83cefae4cab97d7548189"
+        },
+        {
+          "name": "OPoolV2",
+          "methods": [
+            "inbox(address,address,uint256,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "outboxBatch(address,address[],uint256[],bytes[])"
+          ],
+          "extends": "OPoolV2",
+          "address": "0x68b5a1c02dea0958388eee5361f021018bd8dbe7"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "zksync",
+      "networkId": "1",
+      "internalId": 3,
+      "name": "zkSync Lite",
+      "nativeCurrency": {
+        "id": 0,
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "id": 0,
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "id": 1,
+          "name": "DAI",
+          "symbol": "DAI",
+          "decimals": 18,
+          "coinKey": "DAI",
+          "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "isNative": false
+        },
+        {
+          "id": 2,
+          "name": "USDC",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "isNative": false
+        },
+        {
+          "id": 4,
+          "name": "USDT",
+          "symbol": "USDT",
+          "decimals": 6,
+          "coinKey": "USDT",
+          "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "isNative": false
+        }
+      ],
+      "contracts": [],
+      "vm": "ZKLITEVM"
+    },
+    {
+      "chainId": "SN_MAIN",
+      "networkId": "mainnet-alpha",
+      "internalId": 4,
+      "name": "Starknet",
+      "contract": {
+        "0x058680be0cf3f29c7a33474a218e5fed1ad213051cb2e9eac501a26852d64ca2": "StarknetOrbiterRouter",
+        "0x0173f81c529191726c6e7287e24626fe24760ac44dae2a1f7e02080230f8458b": "OBSource"
+      },
+      "nativeCurrency": {
+        "id": 0,
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7"
+      },
+      "tokens": [
+        {
+          "id": 0,
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+          "isNative": true
+        },
+        {
+          "name": "DAI Token",
+          "symbol": "DAI",
+          "decimals": 18,
+          "coinKey": "DAI",
+          "address": "0x00da114221cb83fa859dbdb4c44beeaa0bb37c7537ad5ae66fe5e0efd20e6eb3",
+          "isNative": false
+        },
+        {
+          "name": "USDC Token",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x053c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8",
+          "isNative": false
+        },
+        {
+          "name": "USDT Token",
+          "symbol": "USDT",
+          "decimals": 6,
+          "coinKey": "USDT",
+          "address": "0x068f5c6a61780768455de69077e07e89787839bf8166decfbf92b645209c0fb8",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0x0173f81c529191726c6e7287e24626fe24760ac44dae2a1f7e02080230f8458b"
+        },
+        {
+          "name": "StarknetOrbiterRouter",
+          "methods": [],
+          "extends": "StarknetOrbiterRouter",
+          "address": "0x058680be0cf3f29c7a33474a218e5fed1ad213051cb2e9eac501a26852d64ca2"
+        }
+      ],
+      "vm": "CAIROVM"
+    },
+    {
+      "chainId": "137",
+      "networkId": "137",
+      "internalId": 6,
+      "name": "Polygon",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x752bc92211d1ecbb31f84e57c9dfc39a15df9cfa": "OrbiterRouterV1",
+        "0x653f25dc641544675338cb47057f8ea530c69b78": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "MATIC",
+        "symbol": "MATIC",
+        "decimals": 18,
+        "coinKey": "MATIC",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "MATIC",
+          "symbol": "MATIC",
+          "decimals": 18,
+          "coinKey": "MATIC",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Dai Stablecoin",
+          "symbol": "DAI",
+          "decimals": 18,
+          "coinKey": "DAI",
+          "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+          "isNative": false
+        },
+        {
+          "name": "Wrapped Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+          "isNative": false
+        },
+        {
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "decimals": 6,
+          "coinKey": "USDT",
+          "address": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV1",
+          "methods": [
+            "swap(address,address,uint256,bytes)",
+            "swapAnswer(address,address,uint256,bytes)"
+          ],
+          "extends": "OrbiterRouterV1",
+          "address": "0x752bc92211d1ecbb31f84e57c9dfc39a15df9cfa"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x653f25dc641544675338cb47057f8ea530c69b78"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0x89f423567c2648bb828c3997f60c47b54f57fa6e"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0x7d60c5a9cffc091cded4fddcb4ae7c007151fb97"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x0a29e59538ef9a64d58817f272ccce478fa7874d"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x9522261525df0ef42ad8297a152091b480af34da"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0xee1162d7a399793d85bb61733863be8a753897b6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "10",
+      "networkId": "10",
+      "internalId": 7,
+      "name": "Optimism",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x752bc92211d1ecbb31f84e57c9dfc39a15df9cfa": "OrbiterRouterV1",
+        "0x3191f40de6991b1bb1f61b7cec43d62bb337786b": "OrbiterRouterV3",
+        "0x68b5a1c02dea0958388eee5361f021018bd8dbe7": "OPoolV2",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "coinKey": "ETH",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "coinKey": "ETH",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Dai Stablecoin",
+          "symbol": "DAI",
+          "decimals": 18,
+          "coinKey": "DAI",
+          "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+          "isNative": false
+        },
+        {
+          "name": "USDC Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "decimals": 6,
+          "coinKey": "USDT",
+          "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+          "isNative": false
+        },
+        {
+          "name": "Wrapped BTC",
+          "coinKey": "BTC",
+          "symbol": "BTC",
+          "decimals": 8,
+          "address": "0x68f180fcce6836688e9084f035309e29bf0a2095",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV1",
+          "methods": [
+            "swap(address,address,uint256,bytes)",
+            "swapAnswer(address,address,uint256,bytes)"
+          ],
+          "extends": "OrbiterRouterV1",
+          "address": "0x752bc92211d1ecbb31f84e57c9dfc39a15df9cfa"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x3191f40de6991b1bb1f61b7cec43d62bb337786b"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0xd0c8363dcffaa466d055379f3ddac2cfbfa13e43"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0xf956d9fa19656d8e5219fd6fa8ba6cb198094138"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0xc49cc2cfabd0eb8414439571aaa24f2d86ce6b73"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x4c1a9d72f3d6b9e4a62ca8971dd3862fcb64ad64"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x94246ac21feacfd33d043c46014f373f174edc17"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0xe0713d81040d9ebdd1bf8e56ed32941c6b95c4d2"
+        },
+        {
+          "name": "OPoolV2",
+          "methods": [
+            "inbox(address,address,uint256,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "outboxBatch(address,address[],uint256[],bytes[])"
+          ],
+          "extends": "OPoolV2",
+          "address": "0x68b5a1c02dea0958388eee5361f021018bd8dbe7"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "immutableX",
+      "networkId": "1",
+      "internalId": 8,
+      "name": "Immutable X",
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "coinKey": "USDC",
+          "decimals": 6,
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "isNative": false
+        }
+      ],
+      "contracts": [],
+      "vm": "IMXVM"
+    },
+    {
+      "chainId": "loopring",
+      "networkId": "1",
+      "internalId": 9,
+      "name": "Loopring",
+      "nativeCurrency": {
+        "id": 0,
+        "name": "Ether",
+        "symbol": "ETH",
+        "coinKey": "ETH",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "id": 0,
+          "name": "Ether",
+          "symbol": "ETH",
+          "coinKey": "ETH",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "id": 6,
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "coinKey": "USDC",
+          "decimals": 6,
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "isNative": false
+        }
+      ],
+      "contracts": [],
+      "vm": "LPRVM"
+    },
+    {
+      "chainId": "324",
+      "networkId": "324",
+      "internalId": 14,
+      "name": "ZKSyncEra",
+      "contract": {
+        "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11": "OBSource",
+        "0xb4ab2ff34fadc774aff45f1c4566cb5e16bd4867": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "coinKey": "ETH",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "coinKey": "ETH",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x3355df6d4c9c3035724fd0e3914de96a5a83aaf4",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "coinKey": "USDT",
+          "decimals": 6,
+          "address": "0x493257fD37EDB34451f62EDf8D2a0C418852bA4C",
+          "isNative": false
+        },
+        {
+          "name": "Wrapped BTC",
+          "symbol": "BTC",
+          "decimals": 8,
+          "coinKey": "BTC",
+          "address": "0xBBeB516fb02a01611cBBE0453Fe3c580D7281011",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xb4ab2ff34fadc774aff45f1c4566cb5e16bd4867"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0x4040bec373f6e8be2f913324de94a7b9242e5e92"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0x09b20609d80d4987758a5af40f8886320938f92a"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x8e70e517057e7380587ea6990dae81cb1ba405ce"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x13598fd0986d0e33c402f6907f05acf720224527"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x7667915530fbf47ff822770d2a4458766abcccbc"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0x66c96103d046826beac8d01d8a8df70ef7f18216"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0x68a65e8655f6dd24a7c0d006a482eab76d4d48de"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "56",
+      "networkId": "56",
+      "internalId": 15,
+      "name": "BNB Chain",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0x6285a466a98f513e1f6be29acad27d173d3b3c59": "OPool",
+        "0x68b5a1c02dea0958388eee5361f021018bd8dbe7": "OPoolV2",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "BNB Token",
+        "symbol": "BNB",
+        "coinKey": "BNB",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "BNB Token",
+          "symbol": "BNB",
+          "coinKey": "BNB",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Binance-Peg Ethereum",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+          "isNative": false
+        },
+        {
+          "name": "AiDoge",
+          "symbol": "AIDOGE",
+          "decimals": 6,
+          "coinKey": "AIDOGE",
+          "address": "0x8edb3dc279b953e7e07819bbf22e783637b7cb06",
+          "isNative": false
+        },
+        {
+          "name": "Binance-Peg USDT",
+          "symbol": "USDT",
+          "decimals": 18,
+          "coinKey": "USDT",
+          "address": "0x55d398326f99059ff775485246999027b3197955",
+          "isNative": false
+        },
+        {
+          "name": "Binance-Peg USDC",
+          "symbol": "USDC",
+          "coinKey": "USDC",
+          "decimals": 18,
+          "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+          "isNative": false
+        },
+        {
+          "name": "Binance-Peg BTCB Token",
+          "symbol": "BTC",
+          "decimals": 18,
+          "coinKey": "BTC",
+          "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x00000047bb99ea4d791bb749d970de71ee0b1a34"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0xfc99f58a8974a4bc36e60e2d490bb8d72899ee9f"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0x0d71f24baa4e74b70e23d6e682895f09e04be838"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0xe5a160ad0f16193c0fbf46458c762451d7a7b303"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x05b93f074549839c8079f37dc16d7d9a1c5e6aa5"
+        },
+        {
+          "name": "OPool",
+          "methods": [
+            "inbox(address,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "inboxNative(address,address,uint256,uint256,bytes)"
+          ],
+          "extends": "OPool",
+          "address": "0x6285a466a98f513e1f6be29acad27d173d3b3c59"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0x44ac0f56aae2606a7a76a93d5d46f7f03d9436bd"
+        },
+        {
+          "name": "OPoolV2",
+          "methods": [
+            "inbox(address,address,uint256,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "outboxBatch(address,address[],uint256[],bytes[])"
+          ],
+          "extends": "OPoolV2",
+          "address": "0x68b5a1c02dea0958388eee5361f021018bd8dbe7"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "42170",
+      "networkId": "42170",
+      "internalId": 16,
+      "name": "Arbitrum Nova",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0xbea3c3c4f00799b9b053f7ad25024d85e1ad049a": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "coinKey": "ETH",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "coinKey": "ETH",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x750ba8b76187092b0d1e87e28daaf484d1b5273b",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xbea3c3c4f00799b9b053f7ad25024d85e1ad049a"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "1101",
+      "networkId": "1101",
+      "internalId": 17,
+      "name": "Polygon zkEVM",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "coinKey": "ETH",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "coinKey": "ETH",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0xa8ce8aee21bc2a48a5ef670afcc9274c7bbbc035",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "coinKey": "USDT",
+          "decimals": 6,
+          "address": "0x1e4a5963abfd975d8c9021ce480b42188849d41d",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0x5965851f21dae82ea7c62f87fb7c57172e9f2add"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x90f1ef9d2cde204c8494cf73130771b350070b53"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x2356aa050426d725a9b41dfc96e86fde6b1d12c3"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "534352",
+      "networkId": "534352",
+      "internalId": 19,
+      "name": "Scroll",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "coinKey": "USDT",
+          "decimals": 6,
+          "address": "0xf55BEC9cafDbE8730f096Aa55dad6D22d44099Df",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0xf956d9fa19656d8e5219fd6fa8ba6cb198094138"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0x236b4774dcdfab0dcfe3744bcd169f33b843c985"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x90f1ef9d2cde204c8494cf73130771b350070b53"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x589f2ecb4e20c204485e8c9a211a4dda68e12295"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0xcfc120b862cef789ba17ad16ad653963b73369a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "167000",
+      "networkId": "167000",
+      "internalId": 20,
+      "name": "Taiko",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x2598d7bc9d3b4b6124f3282e49eee68db270f516": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "coinKey": "USDC",
+          "address": "0x07d83526730c7438048D55A4fc0b850e2aaB6f0b",
+          "name": "USDC Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        },
+        {
+          "coinKey": "USDT",
+          "address": "0x2def195713cf4a606b49d07e520e22c17899a736",
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "decimals": 6,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x2598d7bc9d3b4b6124f3282e49eee68db270f516"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x90f1ef9d2cde204c8494cf73130771b350070b53"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        },
+        {
+          "name": "LoopringEntryPoint",
+          "methods": [
+            "handleOps((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address)"
+          ],
+          "extends": "LoopringEntryPoint",
+          "address": "0x5c07472a097d0e7212612846305a73342dc01b9a"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "8453",
+      "networkId": "8453",
+      "internalId": 21,
+      "name": "Base",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0x68b5a1c02dea0958388eee5361f021018bd8dbe7": "OPoolV2",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Orbiter",
+          "symbol": "OBT",
+          "coinKey": "OBT",
+          "decimals": 18,
+          "address": "0x514d8e8099286a13486ef6c525c120f51c239b52",
+          "isNative": false
+        },
+        {
+          "name": "USD Base Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "isNative": false
+        },
+        {
+          "name": "Bridged Tether USD",
+          "symbol": "USDT",
+          "decimals": 6,
+          "coinKey": "USDT",
+          "address": "0xfde4c96c8593536e31f229ea8f37b2ada2699bb2",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0x5965851f21dae82ea7c62f87fb7c57172e9f2add"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0x2ca57133c4835a00bf84a117d2838c68523b4ba3"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x90f1ef9d2cde204c8494cf73130771b350070b53"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0x58476d800ab7979114c9fdc8146c69aae19a62eb"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0x5de4d4e534a2cc2dfcfe6abdc1a2fe22cb4977a5"
+        },
+        {
+          "name": "OPoolV2",
+          "methods": [
+            "inbox(address,address,uint256,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "outboxBatch(address,address[],uint256[],bytes[])"
+          ],
+          "extends": "OPoolV2",
+          "address": "0x68b5a1c02dea0958388eee5361f021018bd8dbe7"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "59144",
+      "networkId": "59144",
+      "internalId": 23,
+      "name": "Linea",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "USDC Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x176211869ca2b568f2a7d4ee941e073a821ee1ff",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "decimals": 6,
+          "coinKey": "USDT",
+          "address": "0xA219439258ca9da29E9Cc4cE5596924745e12B93",
+          "isNative": false
+        },
+        {
+          "name": "Wrapped BTC",
+          "symbol": "BTC",
+          "decimals": 8,
+          "coinKey": "BTC",
+          "address": "0x3aAB2285ddcDdaD8edf438C1bAB47e1a9D05a9b4",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0xf956d9fa19656d8e5219fd6fa8ba6cb198094138"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x0a29e59538ef9a64d58817f272ccce478fa7874d"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0xe3297e99264f53e32d70e1feec70c7a80341277c"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "5000",
+      "networkId": "5000",
+      "internalId": 24,
+      "name": "Mantle",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "MNT",
+        "symbol": "MNT",
+        "decimals": 18,
+        "coinKey": "MNT",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "MNT",
+          "symbol": "MNT",
+          "decimals": 18,
+          "coinKey": "MNT",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "WETH",
+          "symbol": "ETH",
+          "coinKey": "ETH",
+          "decimals": 18,
+          "address": "0xdeaddeaddeaddeaddeaddeaddeaddeaddead1111",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x90f1ef9d2cde204c8494cf73130771b350070b53"
+        },
+        {
+          "name": "Plexus",
+          "methods": [
+            "bridgeToOrbiter((address,uint256,uint64,address,bytes),(address,bytes))",
+            "swapAndBridgeToOrbiter((address,address,(address,uint256)[],(address)[],(address,uint256)[],bytes,address,bytes),(address,uint256,uint64,address,bytes),(address,bytes))"
+          ],
+          "extends": "Plexus",
+          "address": "0xd6b8affaf19c25eb413b1953850fe5c1dad24832"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "204",
+      "networkId": "204",
+      "internalId": 25,
+      "name": "OPBNB",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "BNB",
+        "symbol": "BNB",
+        "decimals": 18,
+        "coinKey": "BNB",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "BNB",
+          "symbol": "BNB",
+          "decimals": 18,
+          "coinKey": "BNB",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0xe7798f023fc62146e8aa1b36da45fb70855a77ea",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "196",
+      "networkId": "196",
+      "internalId": 27,
+      "name": "X Layer",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "OK Token",
+        "symbol": "OKB",
+        "decimals": 18,
+        "coinKey": "OKB",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "OK Token",
+          "symbol": "OKB",
+          "decimals": 18,
+          "coinKey": "OKB",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Wrapped Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x5a77f1443d16ee5761d310e38b62f77f726bc71c",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "7777777",
+      "networkId": "7777777",
+      "internalId": 30,
+      "name": "Zora",
+      "contract": {
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OBSource",
+        "0x2598d7bc9d3b4b6124f3282e49eee68db270f516": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x2598d7bc9d3b4b6124f3282e49eee68db270f516"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "169",
+      "networkId": "169",
+      "internalId": 31,
+      "name": "Manta",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "coinKey": "ETH",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "coinKey": "ETH",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0x91ececc4f2363770c621a8a061a80d67cfeafec7"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x90f1ef9d2cde204c8494cf73130771b350070b53"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "255",
+      "networkId": "255",
+      "internalId": 36,
+      "name": "Kroma",
+      "contract": {
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0x2598d7bC9D3b4B6124f3282E49Eee68db270F516": "OBSource"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "coinKey": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "coinKey": "ETH",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "decimals": 6,
+          "coinKey": "USDT",
+          "address": "0x0Cf7c2A584988871b654Bd79f96899e4cd6C41C0",
+          "isNative": false
+        },
+        {
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "0x0257e4d92C00C9EfcCa1d641b224d7d09cfa4522",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0x2598d7bC9D3b4B6124f3282E49Eee68db270F516"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "42766",
+      "networkId": "42766",
+      "internalId": 38,
+      "name": "ZKFair",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Native USDC",
+        "symbol": "USDC",
+        "coinKey": "USDC",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Native USDC",
+          "symbol": "USDC",
+          "coinKey": "USDC",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x4b21b980d0Dc7D3C0C6175b0A412694F3A1c7c6b",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "81457",
+      "networkId": "81457",
+      "internalId": 40,
+      "name": "Blast",
+      "contract": {
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "0xf956d9fa19656d8e5219fd6fa8ba6cb198094138"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x90f1ef9d2cde204c8494cf73130771b350070b53"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "7000",
+      "networkId": "7000",
+      "internalId": 41,
+      "name": "ZetaChain",
+      "contract": {
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource"
+      },
+      "nativeCurrency": {
+        "name": "Zeta",
+        "symbol": "ZETA",
+        "decimals": 18,
+        "coinKey": "ZETA",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Zeta",
+          "symbol": "ZETA",
+          "decimals": 18,
+          "coinKey": "ZETA",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0xd97B1de3619ed2c6BEb3860147E30cA8A7dC9891",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "223",
+      "networkId": "223",
+      "internalId": 46,
+      "name": "B² Network",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "BTC",
+        "coinKey": "BTC",
+        "symbol": "BTC",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "BTC",
+          "coinKey": "BTC",
+          "symbol": "BTC",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "34443",
+      "networkId": "34443",
+      "internalId": 47,
+      "name": "Mode",
+      "contract": {
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x04e58ee5b6afaa612edd9c3fc847e8d530c6cdab"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "810180",
+      "networkId": "810180",
+      "internalId": 48,
+      "name": "zkLink Nova",
+      "contract": {
+        "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11": "OBSource",
+        "0xb4ab2ff34fadc774aff45f1c4566cb5e16bd4867": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "USDC",
+          "coinKey": "USDC",
+          "symbol": "USDC",
+          "decimals": 6,
+          "address": "0x1a1A3b2ff016332e866787B311fcB63928464509",
+          "isNative": false
+        },
+        {
+          "name": "USDT",
+          "coinKey": "USDT",
+          "symbol": "USDT",
+          "decimals": 6,
+          "address": "0x2F8A25ac62179B31D62D7F80884AE57464699059",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xb4ab2ff34fadc774aff45f1c4566cb5e16bd4867"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x72f4Cd2a1707CbecE96E82be21f243fdF93867ee"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "SOLANA_MAIN",
+      "networkId": "SOLANA_MAIN",
+      "internalId": 51,
+      "name": "Solana",
+      "contract": {
+        "8dt4v1CYg48RHdLVfF7idvbNi3Jfig4i47FbSGNz5H2D": "OPoolV2"
+      },
+      "nativeCurrency": {
+        "name": "SOL Native",
+        "symbol": "SOL",
+        "decimals": 9,
+        "coinKey": "SOL",
+        "address": "11111111111111111111111111111111"
+      },
+      "tokens": [
+        {
+          "name": "SOL Native",
+          "symbol": "SOL",
+          "decimals": 9,
+          "coinKey": "SOL",
+          "address": "11111111111111111111111111111111",
+          "isNative": true
+        },
+        {
+          "name": "Wrapped SOL",
+          "symbol": "WSOL",
+          "decimals": 9,
+          "coinKey": "WSOL",
+          "address": "So11111111111111111111111111111111111111112",
+          "isNative": false
+        },
+        {
+          "name": "USDC Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "coinKey": "USDC",
+          "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "isNative": false
+        },
+        {
+          "coinKey": "BOME",
+          "name": "BOME",
+          "symbol": "BOME",
+          "decimals": 6,
+          "address": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OPool",
+          "methods": [
+            "inbox(address,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "inboxNative(address,address,uint256,uint256,bytes)"
+          ],
+          "extends": "OPool",
+          "address": "8dt4v1CYg48RHdLVfF7idvbNi3Jfig4i47FbSGNz5H2D"
+        },
+        {
+          "name": "SolanaProgramId",
+          "methods": [],
+          "extends": "SolanaProgramId",
+          "address": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
+        },
+        {
+          "name": "NonceProgram",
+          "methods": [],
+          "extends": "NonceProgram",
+          "address": "FkdKXv2Y7NC4UCHv4qUL4NymUiGZcF3fNBLSr8xYKEm6"
+        },
+        {
+          "name": "MemoProgram",
+          "methods": [],
+          "extends": "MemoProgram",
+          "address": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
+        },
+        {
+          "name": "OPoolV2",
+          "methods": [
+            "inbox(address,address,uint256,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "outboxBatch(address,address[],uint256[],bytes[])"
+          ],
+          "extends": "OPoolV2",
+          "address": "8dt4v1CYg48RHdLVfF7idvbNi3Jfig4i47FbSGNz5H2D",
+          "extra": {
+            "state": "5R9LKpG3igbh7q1yUoKn8n8ED8tZt7g9B6Wu6W55QvaA",
+            "makerValid": "LR8nhrj7RfRCtSEMLv9CF4YFnMAMBWHkqbWZVDJgvk8",
+            "authority": "Fmfmay8KzgEvF7NGWRjgFcki2Zy79sa8qXCw9pXTJ5Et",
+            "feeToken": "11111111111111111111111111111111"
+          }
+        }
+      ],
+      "vm": "SOLANAVM"
+    },
+    {
+      "chainId": "70700",
+      "networkId": "70700",
+      "internalId": 53,
+      "name": "Proof of Play Apex",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "4200",
+      "networkId": "4200",
+      "internalId": 54,
+      "name": "Merlin",
+      "contract": {
+        "0x12bdaf8a32e436051439a2777ecb0a70245ad7ee": "OBSource",
+        "0x4b8a4641c140b3aa6be8d99786fafe47a65869db": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Bitcoin",
+        "symbol": "BTC",
+        "decimals": 18,
+        "coinKey": "BTC",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Bitcoin",
+          "symbol": "BTC",
+          "decimals": 18,
+          "coinKey": "BTC",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0x12bdaf8a32e436051439a2777ecb0a70245ad7ee"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x4b8a4641c140b3aa6be8d99786fafe47a65869db"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xb3926def2e0989b0700a57034c9a211bfbcf858b"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "11501",
+      "networkId": "11501",
+      "internalId": 55,
+      "name": "BEVM",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Bitcoin",
+        "symbol": "BTC",
+        "decimals": 18,
+        "coinKey": "BTC",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Bitcoin",
+          "symbol": "BTC",
+          "decimals": 18,
+          "coinKey": "BTC",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "TON",
+      "networkId": "TON",
+      "internalId": 56,
+      "name": "TON",
+      "contract": {},
+      "nativeCurrency": {
+        "name": "TON",
+        "symbol": "TON",
+        "coinKey": "TON",
+        "decimals": 9,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "TON",
+          "symbol": "TON",
+          "coinKey": "TON",
+          "decimals": 9,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "JUSDT",
+          "symbol": "JUSDT",
+          "decimals": 6,
+          "coinKey": "JUSDT",
+          "address": "EQBynBO23ywHy_CgarY9NK9FTz0yDsG82PtcbSTQgGoXwiuA",
+          "isNative": false
+        },
+        {
+          "name": "JUSDC",
+          "symbol": "USDC",
+          "coinKey": "USDC",
+          "decimals": 6,
+          "address": "EQB-MPwrd1G6WKNkLz_VnV6WqBDd142KMQv-g1O-8QUA3728",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "symbol": "USDT",
+          "coinKey": "USDT",
+          "decimals": 6,
+          "address": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
+          "isNative": false
+        }
+      ],
+      "contracts": [],
+      "vm": "TVM"
+    },
+    {
+      "chainId": "60808",
+      "networkId": "60808",
+      "internalId": 57,
+      "name": "BOB",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "coinKey": "ETH",
+        "symbol": "ETH",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "coinKey": "ETH",
+          "symbol": "ETH",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "WBTC",
+          "coinKey": "BTC",
+          "symbol": "BTC",
+          "decimals": 8,
+          "address": "0x03c7054bcb39f7b2e5b2c7acb37583e32d70cfa3",
+          "isNative": false
+        },
+        {
+          "name": "USDC.e",
+          "coinKey": "USDC",
+          "symbol": "USDC",
+          "decimals": 6,
+          "address": "0xe75d0fb2c24a55ca1e3f96781a2bcc7bdba058f0",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x97fffffa57144bbfacf41251bd1763657e646667"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "1116",
+      "networkId": "1116",
+      "internalId": 58,
+      "name": "Core Blockchain",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Core Blockchain Native Token",
+        "symbol": "CORE",
+        "decimals": 18,
+        "coinKey": "CORE",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Core Blockchain Native Token",
+          "symbol": "CORE",
+          "decimals": 18,
+          "coinKey": "CORE",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "BTCB",
+          "coinKey": "BTC",
+          "symbol": "BTC",
+          "decimals": 18,
+          "address": "0x7A6888c85eDBA8E38F6C7E0485212da602761C08",
+          "isNative": false
+        },
+        {
+          "name": "USD Coin",
+          "coinKey": "USDC",
+          "symbol": "USDC",
+          "decimals": 6,
+          "address": "0xa4151b2b3e269645181dccf2d426ce75fcbdeca9",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "TransitFinanceRouterV5",
+          "methods": [
+            "cross((address,address,address,address,address,uint256,uint256,uint256,string,bytes,bytes))"
+          ],
+          "extends": "TransitFinanceRouterV5",
+          "address": "0x07964f135f276412b3182a3b2407b8dd45000000"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "200901",
+      "networkId": "200901",
+      "internalId": 59,
+      "name": "Bitlayer",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "BTC",
+        "coinKey": "BTC",
+        "symbol": "BTC",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "BTC",
+          "coinKey": "BTC",
+          "symbol": "BTC",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Ethereum Token",
+          "coinKey": "ETH",
+          "symbol": "ETH",
+          "decimals": 18,
+          "address": "0xef63d4e178b3180beec9b0e143e0f37f4c93f4c2",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "EchoooWallet",
+          "methods": [
+            "startBridgeWithOrbiter((bytes32,string,uint256,address,uint256,address,uint256,uint256,address,address,uint256,address,address,address,uint256,uint256,(address,bytes)[]),(address,address,uint256,address,address,bytes),(address,address,bytes))"
+          ],
+          "extends": "EchoooWallet",
+          "address": "0x7534f4463622326bbdc04f2bb3df863c7ca906a3"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "EchoooAAWallet",
+          "methods": [
+            "relayCall(((address,address,uint256,uint256,bytes,uint256),(uint256,address,address,address,bytes,uint256)),bytes,bytes)"
+          ],
+          "extends": "EchoooAAWallet",
+          "address": "0xe4c8eeacffe0090218930c008016931d1beb464a"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "28518",
+      "networkId": "28518",
+      "internalId": 61,
+      "name": "Vizing",
+      "contract": {},
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "62050",
+      "networkId": "62050",
+      "internalId": 66,
+      "name": "Optopia",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "name": "USD Coin",
+          "coinKey": "USDC",
+          "symbol": "USDC",
+          "decimals": 6,
+          "address": "0xb62f35b9546a908d11c5803ecbba735abc3e3eae",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "coinKey": "USDT",
+          "symbol": "USDT",
+          "decimals": 6,
+          "address": "0x05d032ac25d322df992303dca074ee7392c117b9",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "7560",
+      "networkId": "7560",
+      "internalId": 67,
+      "name": "Cyber",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "185",
+      "networkId": "185",
+      "internalId": 68,
+      "name": "Mint",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "10241024",
+      "networkId": "10241024",
+      "internalId": 69,
+      "name": "AlienxChain",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "48900",
+      "networkId": "48900",
+      "internalId": 71,
+      "name": "Zircuit",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "252",
+      "networkId": "252",
+      "internalId": 72,
+      "name": "Fraxtal",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "122",
+      "networkId": "122",
+      "internalId": 73,
+      "name": "Fuse",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "coinKey": "FUSE",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "FUSE Token",
+        "symbol": "FUSE",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "FUSE",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "FUSE Token",
+          "symbol": "FUSE",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "coinKey": "ETH",
+          "address": "0x5622f6dc93e08a8b717b149677930c38d5d50682",
+          "name": "Wrapped Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": false
+        },
+        {
+          "coinKey": "USDC",
+          "address": "0x28c3d1cd466ba22f6cae51b1a4692a831696391a",
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "9736",
+      "networkId": "9736",
+      "internalId": 74,
+      "name": "BomeChain",
+      "contract": {
+        "0xbc0e9721c011fc836f518e7e2a759c7220d3d11c": "OPool",
+        "0x68b5a1c02dea0958388eee5361f021018bd8dbe7": "OPoolV2"
+      },
+      "nativeCurrency": {
+        "coinKey": "BOME",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "BOME Token",
+        "symbol": "BOME",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "BOME",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "BOME Token",
+          "symbol": "BOME",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OPool",
+          "methods": [
+            "inbox(address,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "inboxNative(address,address,uint256,uint256,bytes)"
+          ],
+          "extends": "OPool",
+          "address": "0xbc0e9721c011fc836f518e7e2a759c7220d3d11c"
+        },
+        {
+          "name": "OPoolV2",
+          "methods": [
+            "inbox(address,address,uint256,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "outboxBatch(address,address[],uint256[],bytes[])"
+          ],
+          "extends": "OPoolV2",
+          "address": "0x68b5a1c02dea0958388eee5361f021018bd8dbe7"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "1625",
+      "networkId": "1625",
+      "internalId": 75,
+      "name": "Gravity",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "coinKey": "G",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Gravity Token",
+        "symbol": "G",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "G",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Gravity Token",
+          "symbol": "G",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "coinKey": "ETH",
+          "address": "0xf6f832466cd6c21967e0d954109403f36bc8ceaa",
+          "name": "Wrapped Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xf708e11a7c94abde8f6217b13e6fe39c8b9cc0a6"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "728126428",
+      "networkId": "728126428",
+      "internalId": 79,
+      "name": "Tron",
+      "contract": {
+        "TMw9SdMtvxg5vo63iPEKeQCnBg9QzDBYns": "OrbiterRouterV4"
+      },
+      "nativeCurrency": {
+        "name": "TRX",
+        "symbol": "TRX",
+        "coinKey": "TRX",
+        "decimals": 6,
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "TRX",
+          "symbol": "TRX",
+          "coinKey": "TRX",
+          "decimals": 6,
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "USDC Coin",
+          "symbol": "USDC",
+          "coinKey": "USDC",
+          "decimals": 6,
+          "address": "TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8",
+          "isNative": false
+        },
+        {
+          "name": "Tether USD",
+          "coinKey": "USDT",
+          "symbol": "USDT",
+          "decimals": 6,
+          "address": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "XBridge",
+          "methods": [
+            "bridgeToV2((uint256,address,address,uint256,uint256,bytes,bytes))"
+          ],
+          "extends": "XBridge",
+          "address": "TVaV2BBs8tpthbp19QAy7ibmXLoYsomKDD"
+        },
+        {
+          "name": "OrbiterRouterV4",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transfers(address[],uint256[],bytes[])",
+            "transferTokens(address,address[],uint256[])",
+            "transferTokens(address,address[],uint256[],bytes[])",
+            "TransferTo(address,uint256)",
+            "TransferTo(address,uint256,bytes)"
+          ],
+          "extends": "OrbiterRouterV4",
+          "address": "TMw9SdMtvxg5vo63iPEKeQCnBg9QzDBYns"
+        }
+      ],
+      "vm": "TRONVM"
+    },
+    {
+      "chainId": "1135",
+      "networkId": "1135",
+      "internalId": 86,
+      "name": "Lisk",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "690",
+      "networkId": "690",
+      "internalId": 87,
+      "name": "Redstone",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OBSource",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferERC20(address,address,uint256,bytes)"
+          ],
+          "extends": "OBSource",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "8217",
+      "networkId": "8217",
+      "internalId": 89,
+      "name": "Kaia",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "coinKey": "KLAY",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "KAIA",
+        "symbol": "KLAY",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "KLAY",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "KAIA",
+          "symbol": "KLAY",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "coinKey": "ETH",
+          "address": "0x98a8345bb9d3dda9d808ca1c9142a28f6b0430e1",
+          "name": "Wrapped Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "FUEL_MAIN",
+      "networkId": "FUEL",
+      "internalId": 94,
+      "name": "Fuel",
+      "contract": {},
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 9,
+        "address": "0xf8f8b6283d7fa5b672b530cbb84fcccb4ff8dc40f8176ef4544ddb1f1952ad07"
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 9,
+          "address": "0xf8f8b6283d7fa5b672b530cbb84fcccb4ff8dc40f8176ef4544ddb1f1952ad07",
+          "isNative": true
+        }
+      ],
+      "contracts": [],
+      "vm": "FUELVM"
+    },
+    {
+      "chainId": "480",
+      "networkId": "480",
+      "internalId": 95,
+      "name": "World Chain",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x6fbfef431c4ef5254c45391c771358c668a26fc2"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "ECLIPSE_MAIN",
+      "networkId": "ECLIPSE_MAIN",
+      "internalId": 65,
+      "name": "Eclipse",
+      "contract": {},
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 9,
+        "address": "So11111111111111111111111111111111111111112"
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 9,
+          "address": "So11111111111111111111111111111111111111112",
+          "isNative": true
+        }
+      ],
+      "contracts": [],
+      "vm": "SOLANAVM"
+    },
+    {
+      "chainId": "2818",
+      "networkId": "2818",
+      "internalId": 52,
+      "name": "Morph",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OBSource",
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "SwitchBridge",
+          "methods": [
+            "transferByOrbiter((address,address,address,address,uint256,uint256,uint256,uint64,bytes32,bytes32,bytes))",
+            "swapByOrbiter((address,address,address,address,address,uint256,uint256,uint256,uint256,uint256[],bytes32,bytes32,bytes,bytes))"
+          ],
+          "extends": "SwitchBridge",
+          "address": "0x97fffffa57144bbfacf41251bd1763657e646667"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "130",
+      "networkId": "130",
+      "internalId": 91,
+      "name": "Unichain",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3",
+        "0x70f6060fc8b01b56869feba8361df468f98c2900": "Aggregator"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0x70f6060fc8b01b56869feba8361df468f98c2900"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "SUI_MAIN",
+      "networkId": "SUI_MAIN",
+      "internalId": 90,
+      "name": "Sui",
+      "contract": {
+        "0x7f058e6f93bfbd5166ff6b36aa81532ed3bc616e157719d0bfcde4ac83b648d3": "SuiMemo"
+      },
+      "nativeCurrency": {
+        "name": "SUI",
+        "symbol": "SUI",
+        "coinKey": "SUI",
+        "decimals": 9,
+        "address": "0x2::sui::SUI"
+      },
+      "tokens": [
+        {
+          "name": "SUI",
+          "symbol": "SUI",
+          "coinKey": "SUI",
+          "decimals": 9,
+          "address": "0x2::sui::SUI",
+          "isNative": true
+        },
+        {
+          "coinKey": "USDC",
+          "name": "USDC",
+          "symbol": "USDC",
+          "decimals": 6,
+          "address": "0xdba34672e30cb065b1f93e3ab55318768fd6fef66c15942c9f7cb846e2f900e7::usdc::USDC",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "SuiMemo",
+          "methods": [
+            "0x7f058e6f93bfbd5166ff6b36aa81532ed3bc616e157719d0bfcde4ac83b648d3::OrbiterRouter::MessageTakenEvent"
+          ],
+          "extends": "SuiMemo",
+          "address": "0x7f058e6f93bfbd5166ff6b36aa81532ed3bc616e157719d0bfcde4ac83b648d3"
+        }
+      ],
+      "vm": "SUIVM"
+    },
+    {
+      "chainId": "5545",
+      "networkId": "5545",
+      "internalId": 78,
+      "name": "DuckChain",
+      "contract": {
+        "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "TON",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "TON",
+        "symbol": "TON",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "TON",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "TON",
+          "symbol": "TON",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "coinKey": "USDT",
+          "name": "Bridged Tether USD",
+          "symbol": "USDT",
+          "decimals": 18,
+          "address": "0xbe138ad5d41fdc392ae0b61b09421987c1966cc3",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0x13e46b2a3f8512ed4682a8fb8b560589fe3c2172"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "543210",
+      "networkId": "543210",
+      "internalId": 81,
+      "name": "Zero",
+      "contract": {
+        "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "33139",
+      "networkId": "33139",
+      "internalId": 82,
+      "name": "ApeChain",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "APE",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "ApeCoin",
+        "symbol": "APE",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "APE",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "ApeCoin",
+          "symbol": "APE",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "coinKey": "ETH",
+          "address": "0xcf800f4948d16f23333508191b1b1591daf70438",
+          "name": "ApeETH",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "21000000",
+      "networkId": "21000000",
+      "internalId": 83,
+      "name": "Corn",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "BTCN",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Bitcorn",
+        "symbol": "BTC",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "BTCN",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Bitcorn",
+          "symbol": "BTC",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "98865",
+      "networkId": "98865",
+      "internalId": 85,
+      "name": "Plume",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "177",
+      "networkId": "177",
+      "internalId": 92,
+      "name": "HashKey",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3",
+        "0x68b5a1c02dea0958388eee5361f021018bd8dbe7": "OPoolV2"
+      },
+      "nativeCurrency": {
+        "name": "HashKey",
+        "symbol": "HSK",
+        "address": "0x0000000000000000000000000000000000000000",
+        "decimals": 18,
+        "coinKey": "HSK"
+      },
+      "tokens": [
+        {
+          "name": "HashKey",
+          "symbol": "HSK",
+          "address": "0x0000000000000000000000000000000000000000",
+          "decimals": 18,
+          "coinKey": "HSK",
+          "isNative": true
+        },
+        {
+          "coinKey": "ETH",
+          "address": "0xefd4bc9afd210517803f293ababd701caeecdfd0",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": false
+        },
+        {
+          "coinKey": "USDT",
+          "address": "0xf1b50ed67a9e2cc94ad3c477779e2d4cbfff9029",
+          "name": "USDT",
+          "symbol": "USDT",
+          "decimals": 6,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "OPoolV2",
+          "methods": [
+            "inbox(address,address,uint256,address,uint256,bytes)",
+            "outbox(address,address,uint256,bytes)",
+            "outboxBatch(address,address[],uint256[],bytes[])"
+          ],
+          "extends": "OPoolV2",
+          "address": "0x68b5a1c02dea0958388eee5361f021018bd8dbe7"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "146",
+      "networkId": "146",
+      "internalId": 93,
+      "name": "Sonic",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "coinKey": "S",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Sonic",
+        "symbol": "S",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "S",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Sonic",
+          "symbol": "S",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "coinKey": "USDC",
+          "address": "0x29219dd400f2bf60e5a23d13be72b486d4038894",
+          "name": "USDC.e",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "Rubic",
+          "methods": [
+            "startViaRubic(address[],uint256[],bytes)"
+          ],
+          "extends": "Rubic",
+          "address": "0x3335733c454805df6a77f825f266e136fb4a3333"
+        },
+        {
+          "name": "Rango",
+          "methods": [
+            "onChainSwaps((address,address,address,uint256,uint256,uint256,uint256,address,uint256,uint16),(address,address,address,address,bool,uint256,bytes)[],bool,address)",
+            "orbiterBridge((address,address,address,bytes),(address,address,uint256,uint256,uint256,address,uint256,uint16,string))",
+            "orbiterSwapAndBridge((address,address,address,uint256,uint256,uint256,uint256,address,uint256,bool,uint16,string),(address,address,address,address,bool,uint256,bytes)[],(address,address,address,bytes))"
+          ],
+          "extends": "Rango",
+          "address": "0x69460570c93f9de5e2edbc3052bf10125f0ca22d"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "50104",
+      "networkId": "50104",
+      "internalId": 62,
+      "name": "Sophon",
+      "contract": {
+        "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "SOPH",
+        "name": "Sophon",
+        "symbol": "SOPH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "SOPH",
+          "name": "Sophon",
+          "symbol": "SOPH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "decimals": 18,
+          "isNative": true
+        },
+        {
+          "coinKey": "ETH",
+          "address": "0x72af9f169b619d85a47dfa8fefbcd39de55c567d",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "paymaster": "0x98546B226dbbA8230cf620635a1e4ab01F6A99B2",
+          "isNative": false
+        },
+        {
+          "coinKey": "USDC",
+          "address": "0x9aa0f72392b5784ad86c6f3e899bcc053d00db4f",
+          "name": "Circle USDC",
+          "symbol": "USDC",
+          "decimals": 6,
+          "paymaster": "0x98546B226dbbA8230cf620635a1e4ab01F6A99B2",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "57073",
+      "networkId": "57073",
+      "internalId": 63,
+      "name": "Ink",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "80094",
+      "networkId": "80094",
+      "internalId": 97,
+      "name": "Berachain",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "BERA Token",
+        "symbol": "BERA",
+        "decimals": 18,
+        "coinKey": "BERA",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "BERA Token",
+          "symbol": "BERA",
+          "decimals": 18,
+          "coinKey": "BERA",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "coinKey": "ETH",
+          "address": "0x2f6f07cdcf3588944bf4c42ac74ff24bf56e7590",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "1868",
+      "networkId": "1868",
+      "internalId": 98,
+      "name": "Soneium",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        },
+        {
+          "name": "DZap",
+          "methods": [
+            "bridge(bytes32,address,(string,bytes,bytes,address,bool,bool,uint256,uint256),(address,address,uint256,bytes,bytes))"
+          ],
+          "extends": "DZap",
+          "address": "0xb3926def2e0989b0700a57034c9a211bfbcf858b"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "1514",
+      "networkId": "1514",
+      "internalId": 49,
+      "name": "Story",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "IP Token",
+        "symbol": "IP",
+        "decimals": 18,
+        "coinKey": "IP",
+        "address": "0x0000000000000000000000000000000000000000"
+      },
+      "tokens": [
+        {
+          "name": "IP Token",
+          "symbol": "IP",
+          "decimals": 18,
+          "coinKey": "IP",
+          "address": "0x0000000000000000000000000000000000000000",
+          "isNative": true
+        },
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "coinKey": "ETH",
+          "address": "0xbab93b7ad7fe8692a878b95a8e689423437cc500",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "2741",
+      "networkId": "2741",
+      "internalId": 18,
+      "name": "Abstract",
+      "contract": {
+        "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "coinKey": "ETH",
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "tokens": [
+        {
+          "coinKey": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xbf3922a0cebbcd718e715e83d9187cc4bba23f11"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "MOVEMENT_MAIN",
+      "networkId": "MOVEMENT_MAIN",
+      "internalId": 26,
+      "name": "Movement",
+      "contract": {
+        "0x754376dd33cfe751e35a36d76c2063962ae9e716a7aec762fb508308209d77b6": "MoveRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "MOVE",
+        "symbol": "MOVE",
+        "decimals": 8,
+        "address": "0x1::aptos_coin::AptosCoin"
+      },
+      "tokens": [
+        {
+          "name": "MOVE",
+          "symbol": "MOVE",
+          "decimals": 8,
+          "address": "0x1::aptos_coin::AptosCoin",
+          "isNative": true
+        },
+        {
+          "name": "WETH.e",
+          "symbol": "ETH",
+          "decimals": 8,
+          "coinKey": "ETH",
+          "address": "0x908828f4fb0213d4034c3ded1630bbd904e8a3a6bf3c63270887f0b06653a376",
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "MoveRouterV3",
+          "methods": [
+            "message::transfer_token",
+            "message::batch_transfer_token",
+            "message::transfer_coin",
+            "message::batch_transfer_coin"
+          ],
+          "extends": "MoveRouterV3",
+          "address": "0x754376dd33cfe751e35a36d76c2063962ae9e716a7aec762fb508308209d77b6"
+        }
+      ],
+      "vm": "APTOSVM"
+    },
+    {
+      "chainId": "42220",
+      "networkId": "42220",
+      "internalId": 84,
+      "name": "Celo",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3",
+        "0xe530d28960d48708ccf3e62aa7b42a80bc427aef": "Aggregator"
+      },
+      "nativeCurrency": {
+        "name": "CELO",
+        "symbol": "CELO",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000",
+        "coinKey": "CELO"
+      },
+      "tokens": [
+        {
+          "name": "CELO",
+          "symbol": "CELO",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "coinKey": "CELO",
+          "isNative": true
+        },
+        {
+          "coinKey": "USDT",
+          "address": "0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e",
+          "name": "USDT",
+          "symbol": "USDT",
+          "decimals": 6,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "Aggregator",
+          "methods": [
+            "executeBridge((address,address,uint256,bytes,bool,address,uint256))",
+            "executeSwap((address,address,address,uint256,uint256,bytes,bool,address,uint256),(address,uint256,bytes)[])"
+          ],
+          "extends": "Aggregator",
+          "address": "0xe530d28960d48708ccf3e62aa7b42a80bc427aef"
+        },
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "55244",
+      "networkId": "55244",
+      "internalId": 76,
+      "name": "Superposition",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000",
+        "coinKey": "ETH"
+      },
+      "tokens": [
+        {
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "coinKey": "ETH",
+          "isNative": true
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    },
+    {
+      "chainId": "2020",
+      "networkId": "2020",
+      "internalId": 64,
+      "name": "Ronin",
+      "contract": {
+        "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc": "OrbiterRouterV3"
+      },
+      "nativeCurrency": {
+        "name": "RON",
+        "symbol": "RON",
+        "decimals": 18,
+        "address": "0x0000000000000000000000000000000000000000",
+        "coinKey": "RON"
+      },
+      "tokens": [
+        {
+          "name": "RON",
+          "symbol": "RON",
+          "decimals": 18,
+          "address": "0x0000000000000000000000000000000000000000",
+          "coinKey": "RON",
+          "isNative": true
+        },
+        {
+          "coinKey": "ETH",
+          "address": "0xc99a6a985ed2cac1ef41640596c5a5f9f4e19ef5",
+          "name": "Ether",
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": false
+        },
+        {
+          "coinKey": "USDC",
+          "address": "0x0b7007c13325c48911f73a2dad5fa5dcbf808adc",
+          "name": "USD Coin",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        }
+      ],
+      "contracts": [
+        {
+          "name": "OrbiterRouterV3",
+          "methods": [
+            "transfer(address,bytes)",
+            "transferToken(address,address,uint256,bytes)",
+            "transfers(address[],uint256[])",
+            "transferTokens(address,address[],uint256[])"
+          ],
+          "extends": "OrbiterRouterV3",
+          "address": "0xd9d74a29307cc6fc8bf424ee4217f1a587fbc8dc"
+        }
+      ],
+      "vm": "EVM"
+    }
+  ]
+}
