@@ -5,13 +5,14 @@ from web3.middleware.geth_poa import async_geth_poa_middleware
 from web3.exceptions import TransactionNotFound
 from web3 import AsyncWeb3, AsyncHTTPProvider
 from web3.contract import AsyncContract
-from typing import Optional, Union
+from typing import Optional, Union, Dict, Any
 from web3.types import TxParams
 from hexbytes import HexBytes
 from client.networks import Network
 import asyncio
 import logging
 import json
+import tqdm
 
 with open("abi/erc20_abi.json", "r", encoding="utf-8") as file:
     ERC20_ABI = json.load(file)
@@ -87,12 +88,23 @@ class Client:
             self.w3.eth.account.from_key(self.private_key).address)
 
     # Получение баланса нативного токена
-    async def get_native_balance(self) -> float:
-        """Получает баланс нативного токена в ETH/BNB/MATIC и т.д."""
+    async def get_native_balance(self) -> int:
+        """Получает баланс нативного токена в wei."""
         balance_wei = await self.w3.eth.get_balance(self.address)
         return balance_wei
 
     async def get_allowance(self, token_address: str, owner: str, spender: str) -> int:
+        """
+        Получает allowance токена для указанного адреса и спендера.
+        
+        Args:
+            token_address: Адрес токена
+            owner: Адрес владельца токенов
+            spender: Адрес, которому разрешено тратить токены
+            
+        Returns:
+            int: Количество токенов, разрешенных для траты
+        """
         try:
             contract = await self.get_contract(token_address, ERC20_ABI)
             allowance = await contract.functions.allowance(
@@ -108,6 +120,13 @@ class Client:
     async def wrap_native(self, token_address: str, amount_wei: int = None) -> str:
         """
         Оборачивает нативный токен (ETH/BNB/MATIC) в WETH/WBNB/WMATIC.
+        
+        Args:
+            token_address: Адрес токена обертки
+            amount_wei: Количество нативного токена в wei для обертывания
+            
+        Returns:
+            str: Хеш транзакции
         """
         from utils.wrappers import wrap_native_token
         if amount_wei is None:
@@ -123,6 +142,12 @@ class Client:
     async def unwrap_native(self, amount_wei: int) -> str:
         """
         Разворачивает WETH/WBNB/... обратно в нативный токен.
+        
+        Args:
+            amount_wei: Количество wrapped токена в wei для разворачивания
+            
+        Returns:
+            str: Хеш транзакции
         """
         from utils.wrappers import unwrap_native_token
         tx = await unwrap_native_token(self.w3, self.network.name, amount_wei, self.address)
@@ -133,12 +158,28 @@ class Client:
 
     # Создание объекта контракт для дальнейшего обращения к нему
     async def get_contract(self, contract_address: str, abi: list) -> AsyncContract:
+        """
+        Создает объект контракта для взаимодействия.
+        
+        Args:
+            contract_address: Адрес контракта
+            abi: ABI контракта
+            
+        Returns:
+            AsyncContract: Объект контракта для асинхронного взаимодействия
+        """
         return self.w3.eth.contract(
             address=self.w3.to_checksum_address(contract_address), abi=abi
         )
 
     # Получение суммы газа за транзакцию
     async def get_tx_fee(self) -> int:
+        """
+        Рассчитывает примерную стоимость газа для транзакции.
+        
+        Returns:
+            int: Примерная стоимость газа в wei
+        """
         try:
             fee_history = await self.w3.eth.fee_history(10, "latest", [50])
             base_fee = fee_history['baseFeePerGas'][-1]
@@ -153,7 +194,17 @@ class Client:
             return fallback_gas_price * 70_000
 
     # Преобразование в веи
-    async def to_wei_main(self, number: int | float, token_address: Optional[str] = None):
+    async def to_wei_main(self, number: Union[int, float], token_address: Optional[str] = None) -> int:
+        """
+        Конвертирует число в wei, учитывая десятичные знаки токена.
+        
+        Args:
+            number: Число для конвертации
+            token_address: Адрес токена для определения десятичных знаков
+            
+        Returns:
+            int: Конвертированное значение в wei
+        """
         if token_address:
             contract = await self.get_contract(token_address, ERC20_ABI)
             decimals = await contract.functions.decimals().call()
@@ -171,7 +222,17 @@ class Client:
         return self.w3.to_wei(number, unit_name)
 
     # Преобразование из веи
-    async def from_wei_main(self, number: int | float, token_address: Optional[str] = None):
+    async def from_wei_main(self, number: Union[int, float], token_address: Optional[str] = None) -> float:
+        """
+        Конвертирует wei в обычное число, учитывая десятичные знаки токена.
+        
+        Args:
+            number: Значение в wei для конвертации
+            token_address: Адрес токена для определения десятичных знаков
+            
+        Returns:
+            float: Конвертированное значение
+        """
         if token_address:
             contract = await self.get_contract(token_address, ERC20_ABI)
             decimals = await contract.functions.decimals().call()
@@ -190,6 +251,18 @@ class Client:
 
     # Approve
     async def approve_usdc(self, usdc_contract, spender, amount, eip_1559: bool):
+        """
+        Выполняет approve на ERC20 токен.
+        
+        Args:
+            usdc_contract: Контракт токена
+            spender: Адрес, которому разрешается тратить токены
+            amount: Количество токенов для разрешения
+            eip_1559: Использовать ли EIP-1559 тип транзакций
+            
+        Returns:
+            Dict: Результат выполнения транзакции
+        """
         owner = self.address
         nonce = await self.w3.eth.get_transaction_count(owner)
         chain_id = await self.w3.eth.chain_id
@@ -227,6 +300,18 @@ class Client:
     # Подготовка транзакции
     async def prepare_tx(self, value: Union[int, float] = 0,
                          to: Optional[str] = None, data: Optional[str] = None, gas: Optional[int] = None) -> TxParams:
+        """
+        Подготавливает параметры транзакции.
+        
+        Args:
+            value: Количество нативного токена для отправки
+            to: Адрес получателя
+            data: Данные транзакции
+            gas: Лимит газа
+            
+        Returns:
+            TxParams: Параметры транзакции
+        """
         transaction: TxParams = {
             "chainId": await self.w3.eth.chain_id,
             "nonce": await self.w3.eth.get_transaction_count(self.address),
@@ -259,7 +344,18 @@ class Client:
 
     # Подпись и отправка транзакции
     async def sign_and_send_tx(self, transaction: TxParams, without_gas: bool = False,
-                               external_gas: Optional[int] = None):
+                               external_gas: Optional[int] = None) -> Optional[str]:
+        """
+        Подписывает и отправляет транзакцию.
+        
+        Args:
+            transaction: Параметры транзакции
+            without_gas: Не рассчитывать gas автоматически
+            external_gas: Внешнее значение gas для использования
+            
+        Returns:
+            Optional[str]: Хеш транзакции или None при ошибке
+        """
         try:
             if not without_gas:
                 if external_gas:
@@ -282,30 +378,40 @@ class Client:
 
     # Ожидание результата транзакции
     async def wait_tx(self, tx_hash: Union[str, HexBytes], explorer_url: Optional[str] = None) -> bool:
-        total_time = 0
+        """
+        Ожидает подтверждения транзакции с визуальным индикатором прогресса.
+        
+        Args:
+            tx_hash: Хеш транзакции
+            explorer_url: URL блок-эксплорера
+            
+        Returns:
+            bool: True если транзакция успешна, False в противном случае
+        """
         timeout = 120
-        poll_latency = 10
-
+        poll_latency = 5
+        total_polls = timeout // poll_latency
+        
         tx_hash_bytes = HexBytes(tx_hash)  # Приведение к HexBytes
-
-        while True:
-            try:
-                receipt = await self.w3.eth.get_transaction_receipt(tx_hash_bytes)
-                status = receipt.get("status")
-                if status == 1:
-                    logger.info(f"✅ Транзакция выполнена успешно: {explorer_url}/tx/{tx_hash_bytes.hex()}\n")
-                    return True
-                elif status is None:
-                    await asyncio.sleep(poll_latency)
-                else:
-                    logger.error(f"❌ Транзакция не выполнена: {explorer_url}/tx/{tx_hash_bytes.hex()}")
+        
+        with tqdm.tqdm(total=total_polls, desc="Ожидание подтверждения транзакции") as pbar:
+            for _ in range(total_polls):
+                try:
+                    receipt = await self.w3.eth.get_transaction_receipt(tx_hash_bytes)
+                    if receipt and receipt.get("status") == 1:
+                        logger.info(f"✅ Транзакция выполнена успешно: {explorer_url}/tx/{tx_hash_bytes.hex()}\n")
+                        return True
+                    elif receipt and receipt.get("status") == 0:
+                        logger.error(f"❌ Транзакция не выполнена: {explorer_url}/tx/{tx_hash_bytes.hex()}")
+                        return False
+                except TransactionNotFound:
+                    pass
+                except Exception as e:
+                    logger.error(f"❌ Ошибка при получении receipt: {e}")
                     return False
-            except TransactionNotFound:
-                if total_time > timeout:
-                    logger.warning(f"❌ Транзакция {tx_hash_bytes.hex()} не подтвердилась за 120 секунд")
-                    return False
-                total_time += poll_latency
+                
                 await asyncio.sleep(poll_latency)
-            except Exception as e:
-                logger.error(f"❌ Ошибка при получении receipt: {e}")
-                return False
+                pbar.update(1)
+                
+        logger.warning(f"❌ Транзакция {tx_hash_bytes.hex()} не подтвердилась за {timeout} секунд")
+        return False
